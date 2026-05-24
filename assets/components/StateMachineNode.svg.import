@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbinwo7ix7b0n"
-path="res://.godot/imported/node_state.png-66e5ab2b3551329b4732ae645c1ded32.ctex"
+uid="uid://3wst8vi3r8oe"
+path="res://.godot/imported/StateMachineNode.svg-dfd345e50e9eedb5d7f0cbcd7aed6191.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/node_state.png"
-dest_files=["res://.godot/imported/node_state.png-66e5ab2b3551329b4732ae645c1ded32.ctex"]
+source_file="res://assets/components/StateMachineNode.svg"
+dest_files=["res://.godot/imported/StateMachineNode.svg-dfd345e50e9eedb5d7f0cbcd7aed6191.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

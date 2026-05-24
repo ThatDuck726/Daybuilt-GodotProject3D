@@ -1,3 +1,4 @@
+@icon("res://assets/components/AudioComponentNode.svg")
 class_name AudioComponent
 extends Component
 

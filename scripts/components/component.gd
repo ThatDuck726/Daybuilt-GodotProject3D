@@ -1,3 +1,4 @@
+@icon("res://assets/components/ComponentNode.svg")
 class_name Component
 extends Node
 
