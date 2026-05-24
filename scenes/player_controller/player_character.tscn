@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ddpnxyi5bftrw" path="res://scenes/player_controller/player_character.gd" id="1_uxcjg"]
 [ext_resource type="Script" uid="uid://kabpamtfyajc" path="res://scripts/components/health_component.gd" id="2_cx3q3"]
+[ext_resource type="Script" uid="uid://cb2ggco55x7n4" path="res://scripts/components/mouse_capture_component.gd" id="2_qcfe0"]
 [ext_resource type="Script" uid="uid://cgg8v6mqlww17" path="res://scripts/components/audio_component.gd" id="3_qcfe0"]
 [ext_resource type="Script" uid="uid://d37bkrw4sle3v" path="res://scripts/components/statemachine/state_machine.gd" id="4_e0u4p"]
 [ext_resource type="Script" uid="uid://b3vcyv3niknj1" path="res://scripts/components/statemachine/state.gd" id="5_7124t"]
@@ -14,6 +15,10 @@ rings = 4
 
 [node name="PlayerCharacter" type="CharacterBody3D" unique_id=1179956342]
 script = ExtResource("1_uxcjg")
+
+[node name="MouseCaptureComponent" type="Node" parent="." unique_id=2047711409]
+script = ExtResource("2_qcfe0")
+metadata/_custom_type_script = "uid://cb2ggco55x7n4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1761820767]
 shape = SubResource("CapsuleShape3D_sxs1x")
