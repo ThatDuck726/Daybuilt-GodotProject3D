@@ -9,7 +9,7 @@ signal value_updated(new_value)
 
 func create_category(name : String, value : String, horizontal : bool = true) -> void:
 	if does_category_exist(name, false):
-		printerr("Category Already Exists: ", name)
+		push_warning("Category Already Exists: ", name)
 		return
 	
 	contents_dictionary.set(name, value)
@@ -47,7 +47,7 @@ func does_category_exist(category : String, verbose : bool) -> bool:
 		if debug: print("Found Category: ", category)
 		return true
 	else:
-		if verbose or debug: printerr("Category Doesn't Exist: ", category)
+		if verbose or debug: push_warning("Category Doesn't Exist: ", category)
 		return false
 
 func delete_category(category : String) -> void:
@@ -58,6 +58,6 @@ func delete_category(category : String) -> void:
 
 func _ready() -> void:
 	if Global.dyn_debug != null:
-		printerr("DynDebug Already in Use")
+		push_warning("DynDebug Already in Use")
 		return
 	Global.dyn_debug = self
