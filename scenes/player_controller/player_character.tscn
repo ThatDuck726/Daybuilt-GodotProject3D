@@ -16,3 +16,8 @@ shape = SubResource("CapsuleShape3D_sxs1x")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2059713719]
 mesh = SubResource("CapsuleMesh_uxcjg")
+
+[node name="Head" type="Node3D" parent="." unique_id=542328594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1082948660]
