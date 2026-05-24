@@ -1,3 +1,4 @@
+@icon("res://assets/components/StateNode.svg")
 class_name State
 extends Component
 

@@ -17,7 +17,7 @@ func _ready() -> void:
 		current_state = self.get_child(0)
 	current_state._enter(current_state)
 
-func _on_child_transition(new_state_name) -> void:
+func _on_child_transition(new_state_name : String) -> void:
 	var new_state = states.get(new_state_name)
 	if new_state == null:
 		push_warning("State Does Not Exist: ", new_state_name)
