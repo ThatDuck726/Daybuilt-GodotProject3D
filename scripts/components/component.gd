@@ -1,5 +1,5 @@
 class_name Component
 extends Node
 
-var debug : bool = false
-var target : Node3D
+@export var debug : bool = false
+@export var target : Node3D
