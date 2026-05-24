@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://cfmjrtdgjyiww"]
 
 [ext_resource type="Script" uid="uid://ddpnxyi5bftrw" path="res://scenes/player_controller/player_character.gd" id="1_uxcjg"]
+[ext_resource type="Script" uid="uid://kabpamtfyajc" path="res://scripts/components/health_component.gd" id="2_cx3q3"]
+[ext_resource type="Script" uid="uid://cgg8v6mqlww17" path="res://scripts/components/audio_component.gd" id="3_qcfe0"]
+[ext_resource type="Script" uid="uid://d37bkrw4sle3v" path="res://scripts/components/statemachine/state_machine.gd" id="4_e0u4p"]
+[ext_resource type="Script" uid="uid://b3vcyv3niknj1" path="res://scripts/components/statemachine/state.gd" id="5_7124t"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sxs1x"]
 
@@ -21,3 +25,20 @@ mesh = SubResource("CapsuleMesh_uxcjg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1082948660]
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1359474358]
+script = ExtResource("2_cx3q3")
+metadata/_custom_type_script = "uid://kabpamtfyajc"
+
+[node name="AudioComponent" type="Node" parent="." unique_id=2109542332]
+script = ExtResource("3_qcfe0")
+metadata/_custom_type_script = "uid://cgg8v6mqlww17"
+
+[node name="MovementStateMachine" type="Node" parent="." unique_id=1717729769 node_paths=PackedStringArray("current_state")]
+script = ExtResource("4_e0u4p")
+current_state = NodePath("IdleMovementState")
+metadata/_custom_type_script = "uid://d37bkrw4sle3v"
+
+[node name="IdleMovementState" type="Node" parent="MovementStateMachine" unique_id=1879189851]
+script = ExtResource("5_7124t")
+metadata/_custom_type_script = "uid://b3vcyv3niknj1"
