@@ -14,6 +14,14 @@ config/name="Daybuilt BaseGodotProject3D"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://b1dl81x75ey8n"
+
+[autoload]
+
+Global="*uid://b0ndy6bcxkioy"
+
 [display]
 
 window/size/viewport_width=1920

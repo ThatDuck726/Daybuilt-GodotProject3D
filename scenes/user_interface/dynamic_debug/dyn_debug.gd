@@ -57,4 +57,7 @@ func delete_category(category : String) -> void:
 	category_deleted.emit(category)
 
 func _ready() -> void:
-	pass
+	if Global.dyn_debug != null:
+		printerr("DynDebug Already in Use")
+		return
+	Global.dyn_debug = self
