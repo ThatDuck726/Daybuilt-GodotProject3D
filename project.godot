@@ -21,12 +21,17 @@ buses/default_bus_layout="uid://b1dl81x75ey8n"
 [autoload]
 
 Global="*uid://b0ndy6bcxkioy"
+DiscordRPCLoader="*uid://2dimuwgbiemg"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1280
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/discord-rpc-gd/plugin.cfg")
 
 [input]
 
