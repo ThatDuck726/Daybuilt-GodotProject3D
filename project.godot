@@ -22,6 +22,7 @@ buses/default_bus_layout="uid://b1dl81x75ey8n"
 
 Global="*uid://b0ndy6bcxkioy"
 DiscordRPCLoader="*uid://2dimuwgbiemg"
+AmbientCG="*uid://cnxneyd8ilml2"
 
 [display]
 
@@ -31,7 +32,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/discord-rpc-gd/plugin.cfg")
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/ambientcg/plugin.cfg", "res://addons/discord-rpc-gd/plugin.cfg")
 
 [input]
 
