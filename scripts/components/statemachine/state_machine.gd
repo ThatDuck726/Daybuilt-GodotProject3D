@@ -6,6 +6,8 @@ extends Component
 var states : Dictionary[String, State]
 
 func _ready() -> void:
+	self.target = self.get_parent()
+	
 	for child in self.get_children():
 		if child is State:
 			states[child.name] = child
@@ -15,6 +17,7 @@ func _ready() -> void:
 	
 	if current_state == null:
 		current_state = self.get_child(0)
+	current_state.state_machine = self
 	current_state._enter(current_state)
 
 func _on_child_transition(new_state_name : String) -> void:
@@ -32,3 +35,9 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	current_state._physics_update(delta)
+
+func get_state_from_name(state_name : String) -> State:
+	if !states.has(state_name):
+		push_error("State does not exist: ", state_name, " in StateMachine: ", self.name)
+		return null
+	return states.get(state_name)

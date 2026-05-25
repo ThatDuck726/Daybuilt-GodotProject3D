@@ -2,8 +2,13 @@
 class_name State
 extends Component
 
+var state_machine : StateMachine
+#var player : PlayerCharacter
+
+signal transition(new_state_name : String)
+
 func _enter(previous_state : State) -> void:
-	pass
+	target = state_machine.target
 
 func _exit() -> void:
 	pass

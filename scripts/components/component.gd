@@ -3,4 +3,4 @@ class_name Component
 extends Node
 
 @export var debug : bool = false
-@export var target : Node3D
+@export var target : Node

@@ -1,5 +1,5 @@
 @icon("res://assets/components/MouseCaptureComponentNode.svg")
-class_name MouseCaptureComponent 
+class_name AnalogCaptureComponent 
 extends Component
 
 @export_category("Mouse Capture Settings")
@@ -34,3 +34,6 @@ func _process(delta: float) -> void:
 	# Resets Mouse Input to Zero, no Cumulative Mouse Motion here
 	_mouse_input = Vector2.ZERO
 	_joy_input = Vector2.ZERO
+
+func play_controller_vibration() -> void:
+	pass
