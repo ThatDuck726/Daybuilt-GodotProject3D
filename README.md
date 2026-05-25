@@ -1,5 +1,5 @@
 # Daybuilt GodotProject3D
-[![Godot](https://img.shields.io/badge/Godot-v4.6.2%20-478CBF?logo=godot-engine&logoColor=white)](https://godotengine.org/download/)
+[![Godot](https://img.shields.io/badge/Godot-v4.6.3%20-478CBF?logo=godot-engine&logoColor=white)](https://godotengine.org/download/)
 
 Template Project for 3D Godot Projects designed to be forked for other projects.
 
@@ -7,9 +7,11 @@ Template Project for 3D Godot Projects designed to be forked for other projects.
 
 ### Components
 - Component
+- AnalogCaptureComponent
 - AudioComponent
+- StateMachine
+- State
 - ResourceComponent
-- MouseCaptureComponent
 ### Included Addons
 - [AmbientCG Browser](https://github.com/AzPepoze/godot-ambientcg) by AzPepoze & CSLRDoesntGameDev
 - [DiscordRPC-GD](https://codeberg.org/vaporvee/discord-rpc-godot) by Vaporvee
