@@ -1,3 +1,4 @@
+@icon("res://assets/components/MouseCaptureComponentNode.svg")
 class_name MouseCaptureComponent 
 extends Component
 
