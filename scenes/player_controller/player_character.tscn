@@ -5,8 +5,11 @@
 [ext_resource type="Script" uid="uid://cb2ggco55x7n4" path="res://scripts/components/mouse_capture_component.gd" id="2_qcfe0"]
 [ext_resource type="Script" uid="uid://cgg8v6mqlww17" path="res://scripts/components/audio_component.gd" id="3_qcfe0"]
 [ext_resource type="Script" uid="uid://d37bkrw4sle3v" path="res://scripts/components/statemachine/state_machine.gd" id="4_e0u4p"]
-[ext_resource type="Script" uid="uid://b3vcyv3niknj1" path="res://scripts/components/statemachine/state.gd" id="5_7124t"]
+[ext_resource type="Script" uid="uid://cr84p48gsyt85" path="res://scenes/player_controller/states/idle_movement_state.gd" id="6_7124t"]
 [ext_resource type="Script" uid="uid://cmku21m2xg7h5" path="res://scripts/components/resource_component.gd" id="7_e0u4p"]
+[ext_resource type="Script" uid="uid://ctl3bat25rwmy" path="res://scenes/player_controller/states/walk_movement_state.gd" id="7_yuslv"]
+[ext_resource type="Script" uid="uid://cmud7br6t8wyh" path="res://scenes/player_controller/states/jump_movement_state.gd" id="8_l1ug8"]
+[ext_resource type="Script" uid="uid://00khsk4ctda5" path="res://scenes/player_controller/states/sprint_movement_state.gd" id="9_l1ug8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sxs1x"]
 
@@ -14,10 +17,10 @@
 radial_segments = 6
 rings = 4
 
-[node name="PlayerCharacter" type="CharacterBody3D" unique_id=1179956342]
+[node name="PlayerCharacter" type="CharacterBody3D" unique_id=1179956342 groups=["player"]]
 script = ExtResource("1_uxcjg")
 
-[node name="MouseCaptureComponent" type="Node" parent="." unique_id=2047711409]
+[node name="AnalogCaptureComponent" type="Node" parent="." unique_id=2047711409]
 script = ExtResource("2_qcfe0")
 metadata/_custom_type_script = "uid://cb2ggco55x7n4"
 
@@ -46,7 +49,19 @@ current_state = NodePath("IdleMovementState")
 metadata/_custom_type_script = "uid://d37bkrw4sle3v"
 
 [node name="IdleMovementState" type="Node" parent="MovementStateMachine" unique_id=1879189851]
-script = ExtResource("5_7124t")
+script = ExtResource("6_7124t")
+metadata/_custom_type_script = "uid://b3vcyv3niknj1"
+
+[node name="WalkMovementState" type="Node" parent="MovementStateMachine" unique_id=896924466]
+script = ExtResource("7_yuslv")
+metadata/_custom_type_script = "uid://b3vcyv3niknj1"
+
+[node name="JumpMovementState" type="Node" parent="MovementStateMachine" unique_id=1799454410]
+script = ExtResource("8_l1ug8")
+metadata/_custom_type_script = "uid://b3vcyv3niknj1"
+
+[node name="SprintMovementState" type="Node" parent="MovementStateMachine" unique_id=647292744]
+script = ExtResource("9_l1ug8")
 metadata/_custom_type_script = "uid://b3vcyv3niknj1"
 
 [node name="ResourceComponent" type="Node" parent="." unique_id=1847652360]

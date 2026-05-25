@@ -22,6 +22,7 @@ var _regen_timer : float = 0.0
 func _ready() -> void:
 	_current_resource_quantity = maximum_resource_quantity
 
+# TODO Finish writing this later
 func _process(delta: float) -> void:
 	if !does_passive_regen: return
 	
@@ -32,19 +33,41 @@ func _process(delta: float) -> void:
 	var _previous_resource_quantity := _current_resource_quantity
 	_current_resource_quantity = minf(_current_resource_quantity + passive_regen_rate * delta, maximum_resource_quantity)
 
-#
+#---------------v
 # Public Methods
-#
+#---------------v
 
 func change_resource_quantity(_quantity : float) -> void:
-	pass
+	if _quantity == 0: return
+	
+	var _new_resource_quantity := _current_resource_quantity + _quantity
+	if _new_resource_quantity < 0:
+		set_current_resource_quantity(0)
+		return
+	current_resource_quantity_changed.emit(_current_resource_quantity, _new_resource_quantity)
+	_current_resource_quantity = _new_resource_quantity
 
 func change_resource_maximum_quantity(_quantity : float) -> void:
-	pass
+	if _quantity == 0: return
+	var _new_resource_quantity := maximum_resource_quantity + _quantity
+	if _new_resource_quantity < 0:
+		set_maximum_resource_quantity(0)
+		return
+	maximum_resource_quantity_changed.emit(maximum_resource_quantity, _new_resource_quantity)
+	maximum_resource_quantity = _new_resource_quantity
 
 func set_current_resource_quantity(_new_quantity : float) -> void:
-	if _new_quantity < 0.0: set_current_resource_quantity(0.0)
+	if _new_quantity < 0.0: 
+		set_current_resource_quantity(0.0)
+		return
 
+func set_maximum_resource_quantity(_new_quantity : float) -> void:
+	if _new_quantity < 0.0: 
+		set_current_resource_quantity(0.0)
+		return
+	maximum_resource_quantity_changed.emit(maximum_resource_quantity, _new_quantity)
+	maximum_resource_quantity = _new_quantity
+	
 func get_current_resource_quantity() -> float:
 	return _current_resource_quantity
 

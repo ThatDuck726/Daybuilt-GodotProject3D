@@ -47,5 +47,4 @@ static func _load_texture(path: String) -> Texture2D:
 
 static func make_orm_material(_files: PackedStringArray, _options: Dictionary) -> ORMMaterial3D:
 	var material := ORMMaterial3D.new()
-	# TODO: Implement ORM texture packing logic
 	return material
