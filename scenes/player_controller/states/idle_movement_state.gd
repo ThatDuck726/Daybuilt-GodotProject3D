@@ -10,5 +10,7 @@ func _update(delta : float) -> void:
 	pass
 
 func _physics_update(delta : float) -> void:
+	if !target.is_on_floor():
+		transition.emit("JumpMovementState")
 	if target.velocity:
 		transition.emit("WalkMovementState")

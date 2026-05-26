@@ -28,6 +28,7 @@ func _on_child_transition(new_state_name : String) -> void:
 	if new_state != current_state:
 		current_state._exit()
 		new_state._enter(current_state)
+		if debug: print("Transitioning from ", current_state, " to ", new_state)
 		current_state = new_state
 
 func _process(delta: float) -> void:

@@ -22,7 +22,6 @@ script = ExtResource("1_uxcjg")
 
 [node name="AnalogCaptureComponent" type="Node" parent="." unique_id=2047711409]
 script = ExtResource("2_qcfe0")
-metadata/_custom_type_script = "uid://cb2ggco55x7n4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1761820767]
 shape = SubResource("CapsuleShape3D_sxs1x")
@@ -37,33 +36,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="HealthComponent" type="Node" parent="." unique_id=1359474358]
 script = ExtResource("2_cx3q3")
-metadata/_custom_type_script = "uid://kabpamtfyajc"
 
 [node name="AudioComponent" type="Node" parent="." unique_id=2109542332]
 script = ExtResource("3_qcfe0")
-metadata/_custom_type_script = "uid://cgg8v6mqlww17"
 
 [node name="MovementStateMachine" type="Node" parent="." unique_id=1717729769 node_paths=PackedStringArray("current_state")]
 script = ExtResource("4_e0u4p")
 current_state = NodePath("IdleMovementState")
-metadata/_custom_type_script = "uid://d37bkrw4sle3v"
+debug = true
 
 [node name="IdleMovementState" type="Node" parent="MovementStateMachine" unique_id=1879189851]
 script = ExtResource("6_7124t")
-metadata/_custom_type_script = "uid://b3vcyv3niknj1"
 
 [node name="WalkMovementState" type="Node" parent="MovementStateMachine" unique_id=896924466]
 script = ExtResource("7_yuslv")
-metadata/_custom_type_script = "uid://b3vcyv3niknj1"
 
 [node name="JumpMovementState" type="Node" parent="MovementStateMachine" unique_id=1799454410]
 script = ExtResource("8_l1ug8")
-metadata/_custom_type_script = "uid://b3vcyv3niknj1"
 
 [node name="SprintMovementState" type="Node" parent="MovementStateMachine" unique_id=647292744]
 script = ExtResource("9_l1ug8")
-metadata/_custom_type_script = "uid://b3vcyv3niknj1"
 
 [node name="ResourceComponent" type="Node" parent="." unique_id=1847652360]
 script = ExtResource("7_e0u4p")
-metadata/_custom_type_script = "uid://cmku21m2xg7h5"

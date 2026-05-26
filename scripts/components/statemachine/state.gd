@@ -8,6 +8,7 @@ var state_machine : StateMachine
 signal transition(new_state_name : String)
 
 func _enter(previous_state : State) -> void:
+	state_machine = get_parent()
 	target = state_machine.target
 
 func _exit() -> void:

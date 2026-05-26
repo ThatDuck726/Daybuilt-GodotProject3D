@@ -10,5 +10,5 @@ func _update(delta : float) -> void:
 	pass
 
 func _physics_update(delta : float) -> void:
-	if target.velocity.y == 0:
+	if target.is_on_floor():
 		transition.emit("IdleMovementState")

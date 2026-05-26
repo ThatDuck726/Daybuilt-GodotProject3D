@@ -10,5 +10,5 @@ func _update(delta : float) -> void:
 	pass
 
 func _physics_update(delta : float) -> void:
-	if target.velocity == 0:
+	if !target.velocity:
 		transition.emit("IdleMovementState")
