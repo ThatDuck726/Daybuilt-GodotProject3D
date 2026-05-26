@@ -60,6 +60,8 @@ func set_current_resource_quantity(_new_quantity : float) -> void:
 	if _new_quantity < 0.0: 
 		set_current_resource_quantity(0.0)
 		return
+	current_resource_quantity_changed.emit(_current_resource_quantity, _new_quantity)
+	_current_resource_quantity = _new_quantity
 
 func set_maximum_resource_quantity(_new_quantity : float) -> void:
 	if _new_quantity < 0.0: 
