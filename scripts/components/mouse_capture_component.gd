@@ -30,10 +30,11 @@ func _unhandled_input(event: InputEvent) -> void:
 func _ready() -> void:
 	Input.mouse_mode = current_mouse_mode
 
-func _process(delta: float) -> void:
-	# Resets Mouse Input to Zero, no Cumulative Mouse Motion here
+func consume_input() -> Vector2:
+	var input := _mouse_input + _joy_input
 	_mouse_input = Vector2.ZERO
 	_joy_input = Vector2.ZERO
+	return input
 
 func play_controller_vibration() -> void:
 	pass

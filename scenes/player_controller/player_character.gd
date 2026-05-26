@@ -1,27 +1,63 @@
 class_name PlayerCharacter
 extends CharacterBody3D
 
-const SPEED = 5.0
+@export var debug : bool
+
+@export var health_component : HealthComponent
+@export var interaction_component : Node
+
+@export_category("Player Movement")
+@export var speed : float = 8
+@export var acceleration : float = 1.0
+@export var deceleration : float = 1.0
+@export var classic_turn_speed : float = 2.5
 const JUMP_VELOCITY = 4.5
 
+var _input_dir : Vector2 = Vector2.ZERO
+var _movement_velocity : Vector3 = Vector3.ZERO
+
+var Settings : Node
+
+func update_rotation(rotation_input) -> void:
+	global_transform.basis = Basis.from_euler(rotation_input)
+
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
+	
+	# If Player is Dead, Don't do Physics
+	#if health_component.is_dead:
+		#return
+	
+	# If Player presses Pause, Pause Game
+	if Input.is_action_just_pressed("pause"):
+		pass
+	
+	# If Player Presses Interact, Use InteractionComponent (if it exists)
+	if Input.is_action_just_pressed("interact"):
+		#if interaction_component: interaction_component.interact()
+		pass
+
+	# Gravity
+	if !is_on_floor():
 		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
+	# Get Direction based on Input
+	_input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
+	
+	var direction
+	var current_velocity : Vector2
+	
+	current_velocity = Vector2(_movement_velocity.x, _movement_velocity.z)
+	direction = (transform.basis * Vector3(_input_dir.x, 0, _input_dir.y)).normalized()
+	
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		current_velocity = lerp(current_velocity, Vector2(direction.x, direction.z) * speed, acceleration)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+		current_velocity = current_velocity.move_toward(Vector2.ZERO, deceleration)
+	
+	_movement_velocity = Vector3(current_velocity.x, velocity.y, current_velocity.y)
+	velocity = _movement_velocity
+	
+	# Doesn't Print if Velocity == 0
+	if debug && velocity: print("Player Velocity: ", velocity)
+	
 	move_and_slide()
