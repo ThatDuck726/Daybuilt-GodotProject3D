@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bw7yfthex8us"]
+
+[ext_resource type="Script" uid="uid://h5nlxjfn0k6l" path="res://scenes/user_interface/main_menu/main_menu.gd" id="1_ew8gn"]
+[ext_resource type="PackedScene" uid="uid://c5a2muvgbo41p" path="res://scenes/test_world/test_world.tscn" id="2_bv0at"]
+
+[sub_resource type="Theme" id="Theme_41c2h"]
+Button/font_sizes/font_size = 64
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/constants/outline_size = 0
+Label/font_sizes/font_size = 72
+Label/fonts/font = null
+
+[node name="MainMenu" type="MarginContainer" unique_id=1814887682]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_41c2h")
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 256
+theme_override_constants/margin_bottom = 128
+script = ExtResource("1_ew8gn")
+dev_world = ExtResource("2_bv0at")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=577261878]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=858781576]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="MainContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1623763363]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/MainContainer" unique_id=1241069725]
+layout_mode = 2
+text = "Daybuilt BaseGodotProject3D"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer" unique_id=2093523357]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Play"
+
+[node name="DevButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer" unique_id=1202738990]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Dev World"
+
+[node name="SettingsButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer" unique_id=593809136]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Settings"
+
+[node name="CreditsButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer" unique_id=339992731]
+layout_mode = 2
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer" unique_id=677150590]
+layout_mode = 2
+text = "Button"
