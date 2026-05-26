@@ -7,9 +7,12 @@ func _ready() -> void:
 	for child in %MainContainer.get_children():
 		if child is Button:
 			child.pressed.connect(_on_button_pressed.bind(child.name))
+	set_container(%MainContainer)
 
 func set_container(new_container : VBoxContainer) -> void:
-	pass
+	for child in %MarginContainer.get_children():
+		child.hide()
+	new_container.show()
 
 func _on_button_pressed(button_name : String) -> void:
 	match button_name:

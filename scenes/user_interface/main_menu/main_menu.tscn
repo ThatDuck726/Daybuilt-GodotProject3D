@@ -28,6 +28,7 @@ dev_world = ExtResource("2_bv0at")
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=858781576]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/margin_left = 64
 theme_override_constants/margin_top = 32
@@ -36,11 +37,18 @@ theme_override_constants/margin_bottom = 32
 
 [node name="MainContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1623763363]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/MainContainer" unique_id=1241069725]
+[node name="GameTitle" type="Label" parent="PanelContainer/MarginContainer/MainContainer" unique_id=1241069725]
 layout_mode = 2
 text = "Daybuilt BaseGodotProject3D"
+horizontal_alignment = 1
+
+[node name="ContainerTitle" type="Label" parent="PanelContainer/MarginContainer/MainContainer" unique_id=274179162]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "Main Menu"
 horizontal_alignment = 1
 
 [node name="PlayButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer" unique_id=2093523357]
@@ -64,4 +72,19 @@ text = "Credits"
 
 [node name="QuitButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer" unique_id=677150590]
 layout_mode = 2
-text = "Button"
+text = "Quit"
+
+[node name="CreditsContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=818603665]
+visible = false
+layout_mode = 2
+
+[node name="GameTitle" type="Label" parent="PanelContainer/MarginContainer/CreditsContainer" unique_id=1705604018]
+layout_mode = 2
+text = "Daybuilt BaseGodotProject3D"
+horizontal_alignment = 1
+
+[node name="ContainerTitle" type="Label" parent="PanelContainer/MarginContainer/CreditsContainer" unique_id=229088858]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "Credits Menu"
+horizontal_alignment = 1
