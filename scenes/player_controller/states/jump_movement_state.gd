@@ -12,3 +12,4 @@ func _update(delta : float) -> void:
 func _physics_update(delta : float) -> void:
 	if target.is_on_floor():
 		transition.emit("IdleMovementState")
+		return
