@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://ctl3bat25rwmy" path="res://scenes/player_controller/states/walk_movement_state.gd" id="7_yuslv"]
 [ext_resource type="Script" uid="uid://cmud7br6t8wyh" path="res://scenes/player_controller/states/jump_movement_state.gd" id="8_l1ug8"]
 [ext_resource type="Script" uid="uid://00khsk4ctda5" path="res://scenes/player_controller/states/sprint_movement_state.gd" id="9_l1ug8"]
+[ext_resource type="Script" uid="uid://jb2bev1wf8xk" path="res://scenes/user_interface/dynamic_debug/dyn_debug.gd" id="12_d8xub"]
+[ext_resource type="Theme" uid="uid://cw8h33xv1acv0" path="res://scenes/user_interface/dynamic_debug/dyn_debug.theme" id="12_vfo37"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sxs1x"]
 
@@ -47,10 +49,10 @@ script = ExtResource("2_cx3q3")
 [node name="AudioComponent" type="Node" parent="." unique_id=2109542332]
 script = ExtResource("3_qcfe0")
 
-[node name="MovementStateMachine" type="Node" parent="." unique_id=1717729769 node_paths=PackedStringArray("current_state")]
+[node name="MovementStateMachine" type="Node" parent="." unique_id=1717729769 node_paths=PackedStringArray("dyn_debug", "current_state")]
 script = ExtResource("4_e0u4p")
-current_state = NodePath("IdleMovementState")
-debug = true
+dyn_debug = NodePath("../CanvasLayer/PanelContainer/MarginContainer/DynDebug")
+current_state = NodePath("WalkMovementState")
 
 [node name="IdleMovementState" type="Node" parent="MovementStateMachine" unique_id=1879189851]
 script = ExtResource("6_7124t")
@@ -66,3 +68,17 @@ script = ExtResource("9_l1ug8")
 
 [node name="ResourceComponent" type="Node" parent="." unique_id=1847652360]
 script = ExtResource("7_e0u4p")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1338374917]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=1933705333]
+offset_right = 383.0
+offset_bottom = 319.0
+theme = ExtResource("12_vfo37")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer" unique_id=1552018989]
+layout_mode = 2
+
+[node name="DynDebug" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer" unique_id=2123346977]
+layout_mode = 2
+script = ExtResource("12_d8xub")

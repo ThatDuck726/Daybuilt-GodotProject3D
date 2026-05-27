@@ -1,13 +1,26 @@
 extends Container
 
 @export var debug : bool = false
+
 var contents_dictionary : Dictionary[String, String]
 
 signal category_created(category_name)
 signal category_deleted(category_name)
 signal value_updated(new_value)
 
-func create_category(name : String, value : String, horizontal : bool = true) -> void:
+func _ready() -> void:
+	if Global.dyn_debug != null:
+		push_warning("DynDebug Already in Use")
+		return
+
+func _get_container(category_name : String) -> Container:
+	return null
+
+#----------------#
+# Public Methods #
+#----------------#
+
+func create_category(name : String, value : String, horizontal : bool = false) -> void:
 	if does_category_exist(name, false):
 		push_warning("Category Already Exists: ", name)
 		return
@@ -16,13 +29,15 @@ func create_category(name : String, value : String, horizontal : bool = true) ->
 	
 	# Create Category Name & Value Labels, will be children of another container
 	var name_label := Label.new()
-	name_label.text = name
+	name_label.text = (name + ": ")
 	var value_label := Label.new()
 	value_label.text = value
 	
-	if horizontal:
+	if !horizontal:
 		var hbox := HBoxContainer.new()
 		hbox.name = (name + "Container")
+		
+		add_child(hbox)
 		
 		hbox.add_child(name_label)
 		hbox.add_child(value_label)
@@ -33,8 +48,11 @@ func create_category(name : String, value : String, horizontal : bool = true) ->
 		vbox.add_child(name_label)
 		vbox.add_child(value_label)
 
+# TODO Make this actually work, might involve rewriting some of the script
 func update_value(category : String, new_value : String) -> void:
-	if !does_category_exist(category, true): return
+	if !does_category_exist(category, true): 
+		print("Category Doesn't Exist")
+		return
 	contents_dictionary.set(category, new_value)
 	value_updated.emit(new_value)
 
@@ -55,9 +73,3 @@ func delete_category(category : String) -> void:
 	contents_dictionary.erase(category)
 	
 	category_deleted.emit(category)
-
-func _ready() -> void:
-	if Global.dyn_debug != null:
-		push_warning("DynDebug Already in Use")
-		return
-	Global.dyn_debug = self

@@ -2,6 +2,8 @@
 class_name StateMachine
 extends Component
 
+@export var dyn_debug : Container
+
 @export var current_state : State
 var states : Dictionary[String, State]
 
@@ -19,6 +21,8 @@ func _ready() -> void:
 		current_state = self.get_child(0)
 	current_state.state_machine = self
 	current_state._enter(current_state)
+	
+	if dyn_debug: dyn_debug.create_category(self.name, current_state.name)
 
 func _on_child_transition(new_state_name : String) -> void:
 	var new_state = states.get(new_state_name)
@@ -28,7 +32,10 @@ func _on_child_transition(new_state_name : String) -> void:
 	if new_state != current_state:
 		current_state._exit()
 		new_state._enter(current_state)
+		
 		if debug: print("Transitioning from ", current_state, " to ", new_state)
+		if dyn_debug: dyn_debug.update_value(self.name, current_state.name)
+		
 		current_state = new_state
 
 func _process(delta: float) -> void:

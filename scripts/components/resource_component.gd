@@ -69,7 +69,7 @@ func set_maximum_resource_quantity(_new_quantity : float) -> void:
 		return
 	maximum_resource_quantity_changed.emit(maximum_resource_quantity, _new_quantity)
 	maximum_resource_quantity = _new_quantity
-	
+
 func get_current_resource_quantity() -> float:
 	return _current_resource_quantity
 

@@ -6,13 +6,6 @@ extends CharacterBody3D
 @export var health_component : HealthComponent
 @export var interaction_component : Node
 
-@export_category("Player Movement")
-@export var speed : float = 8
-@export var acceleration : float = 1.0
-@export var deceleration : float = 1.0
-@export var classic_turn_speed : float = 2.5
-const JUMP_VELOCITY = 4.5
-
 var _input_dir : Vector2 = Vector2.ZERO
 var _movement_velocity : Vector3 = Vector3.ZERO
 
@@ -21,12 +14,10 @@ var Settings : Node
 func update_rotation(rotation_input) -> void:
 	global_transform.basis = Basis.from_euler(rotation_input)
 
-func _physics_process(delta: float) -> void:
-	
-	# If Player is Dead, Don't do Physics
-	#if health_component.is_dead:
-		#return
-	
+func update_gravity(delta : float) -> void:
+	velocity += get_gravity() * delta
+
+func update_input(speed : float, acceleration : float, deceleration : float) -> void:
 	# If Player presses Pause, Pause Game
 	if Input.is_action_just_pressed("pause"):
 		pass
@@ -35,10 +26,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
 		#if interaction_component: interaction_component.interact()
 		pass
-
-	# Gravity
-	if !is_on_floor():
-		velocity += get_gravity() * delta
 	
 	# Get Direction based on Input
 	_input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
@@ -59,5 +46,6 @@ func _physics_process(delta: float) -> void:
 	
 	# Doesn't Print if Velocity == 0
 	if debug && velocity: print("Player Velocity: ", velocity)
-	
+
+func update_velocity() -> void:
 	move_and_slide()
