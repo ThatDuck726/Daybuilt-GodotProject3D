@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://cfmjrtdgjyiww"]
 
 [ext_resource type="Script" uid="uid://ddpnxyi5bftrw" path="res://scenes/player_controller/player_character.gd" id="1_uxcjg"]
-[ext_resource type="Script" uid="uid://kabpamtfyajc" path="res://scripts/components/health_component.gd" id="2_cx3q3"]
-[ext_resource type="Script" uid="uid://cb2ggco55x7n4" path="res://scripts/components/mouse_capture_component.gd" id="2_qcfe0"]
+[ext_resource type="Script" uid="uid://kabpamtfyajc" path="res://scripts/classes/components/health_component.gd" id="2_cx3q3"]
+[ext_resource type="Script" uid="uid://cb2ggco55x7n4" path="res://scripts/classes/components/mouse_capture_component.gd" id="2_qcfe0"]
 [ext_resource type="Script" uid="uid://dph5mxplib58e" path="res://scenes/player_controller/camera_controller.gd" id="3_dftnd"]
-[ext_resource type="Script" uid="uid://cgg8v6mqlww17" path="res://scripts/components/audio_component.gd" id="3_qcfe0"]
-[ext_resource type="Script" uid="uid://d37bkrw4sle3v" path="res://scripts/components/statemachine/state_machine.gd" id="4_e0u4p"]
+[ext_resource type="Script" uid="uid://cgg8v6mqlww17" path="res://scripts/classes/components/audio_component.gd" id="3_qcfe0"]
+[ext_resource type="Script" uid="uid://d37bkrw4sle3v" path="res://scripts/classes/components/statemachine/state_machine.gd" id="4_e0u4p"]
 [ext_resource type="Script" uid="uid://cr84p48gsyt85" path="res://scenes/player_controller/states/idle_movement_state.gd" id="6_7124t"]
-[ext_resource type="Script" uid="uid://cmku21m2xg7h5" path="res://scripts/components/resource_component.gd" id="7_e0u4p"]
+[ext_resource type="Script" uid="uid://cmku21m2xg7h5" path="res://scripts/classes/components/resource_component.gd" id="7_e0u4p"]
 [ext_resource type="Script" uid="uid://ctl3bat25rwmy" path="res://scenes/player_controller/states/walk_movement_state.gd" id="7_yuslv"]
 [ext_resource type="Script" uid="uid://cmud7br6t8wyh" path="res://scenes/player_controller/states/jump_movement_state.gd" id="8_l1ug8"]
 [ext_resource type="Script" uid="uid://00khsk4ctda5" path="res://scenes/player_controller/states/sprint_movement_state.gd" id="9_l1ug8"]
+[ext_resource type="Script" uid="uid://b3vcyv3niknj1" path="res://scripts/classes/components/statemachine/state.gd" id="11_up0t1"]
 [ext_resource type="Script" uid="uid://jb2bev1wf8xk" path="res://scenes/user_interface/dynamic_debug/dyn_debug.gd" id="12_d8xub"]
 [ext_resource type="Theme" uid="uid://cw8h33xv1acv0" path="res://scenes/user_interface/dynamic_debug/dyn_debug.theme" id="12_vfo37"]
 
@@ -65,6 +66,23 @@ script = ExtResource("8_l1ug8")
 
 [node name="SprintMovementState" type="Node" parent="MovementStateMachine" unique_id=647292744]
 script = ExtResource("9_l1ug8")
+
+[node name="WeaponStateMachine" type="Node" parent="." unique_id=1914343710 node_paths=PackedStringArray("current_state")]
+script = ExtResource("4_e0u4p")
+current_state = NodePath("IdleState")
+metadata/_custom_type_script = "uid://d37bkrw4sle3v"
+
+[node name="IdleState" type="Node" parent="WeaponStateMachine" unique_id=825181439]
+script = ExtResource("11_up0t1")
+metadata/_custom_type_script = "uid://b3vcyv3niknj1"
+
+[node name="FireState" type="Node" parent="WeaponStateMachine" unique_id=1746503022]
+script = ExtResource("11_up0t1")
+metadata/_custom_type_script = "uid://b3vcyv3niknj1"
+
+[node name="ReloadState" type="Node" parent="WeaponStateMachine" unique_id=662817216]
+script = ExtResource("11_up0t1")
+metadata/_custom_type_script = "uid://b3vcyv3niknj1"
 
 [node name="ResourceComponent" type="Node" parent="." unique_id=1847652360]
 script = ExtResource("7_e0u4p")

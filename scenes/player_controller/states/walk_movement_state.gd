@@ -15,6 +15,9 @@ func _update(delta : float) -> void:
 	target.update_gravity(delta)
 	target.update_input(speed, acceleration, deceleration)
 	target.update_velocity()
+	
+	if Input.is_action_just_pressed("jump"):
+		transition.emit("JumpMovementState")
 
 func _physics_update(delta : float) -> void:
 	if !target.velocity:
