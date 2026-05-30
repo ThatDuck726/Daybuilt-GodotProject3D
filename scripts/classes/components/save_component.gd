@@ -1,6 +1,13 @@
+@icon("res://assets/components/save_component_node.svg")
 class_name SaveComponent
 extends Component
 
+func _ready() -> void:
+	pass
+
+#----------------#
+# Public Methods #
+#----------------#
 
 func create_save(category : String, value : String) -> void:
 	pass

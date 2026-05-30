@@ -3,7 +3,6 @@ class_name State
 extends Component
 
 var state_machine : StateMachine
-#var player : PlayerCharacter
 
 signal transition(new_state_name : String)
 

@@ -5,6 +5,7 @@ extends CharacterBody3D
 
 @export var health_component : HealthComponent
 @export var interaction_component : Node
+@export var save_component : SaveComponent
 
 var _input_dir : Vector2 = Vector2.ZERO
 var _movement_velocity : Vector3 = Vector3.ZERO
