@@ -2,7 +2,8 @@ extends Container
 
 @export var debug : bool = false
 
-var contents_dictionary : Dictionary[String, String]
+var value_dictionary : Dictionary[String, String]
+var container_dictionary : Dictionary[String, Container]
 
 signal category_created(category_name)
 signal category_deleted(category_name)
@@ -13,9 +14,6 @@ func _ready() -> void:
 		push_warning("DynDebug Already in Use")
 		return
 
-func _get_container(category_name : String) -> Container:
-	return null
-
 #----------------#
 # Public Methods #
 #----------------#
@@ -25,7 +23,7 @@ func create_category(name : String, value : String, horizontal : bool = false) -
 		push_warning("Category Already Exists: ", name)
 		return
 	
-	contents_dictionary.set(name, value)
+	value_dictionary.set(name, value)
 	
 	# Create Category Name & Value Labels, will be children of another container
 	var name_label := Label.new()
@@ -41,27 +39,33 @@ func create_category(name : String, value : String, horizontal : bool = false) -
 		
 		hbox.add_child(name_label)
 		hbox.add_child(value_label)
+		container_dictionary.set(name, hbox)
 	else:
 		var vbox := VBoxContainer.new()
 		vbox.name = (name + "Container")
 		
 		vbox.add_child(name_label)
 		vbox.add_child(value_label)
+		container_dictionary.set(name, vbox)
 
-# TODO Make this actually work, might involve rewriting some of the script
 func update_value(category : String, new_value : String) -> void:
 	if !does_category_exist(category, true): 
 		print("Category Doesn't Exist")
 		return
-	contents_dictionary.set(category, new_value)
+	value_dictionary.set(category, new_value)
+	container_dictionary.get(category).get_child(1).text = new_value
 	value_updated.emit(new_value)
 
 func get_value(category : String) -> String:
 	if !does_category_exist(category, true): return "N/A"
-	return contents_dictionary.get(category)
+	return value_dictionary.get(category)
+
+func get_container(category : String) -> Container:
+	if !does_category_exist(category, true): return null
+	return container_dictionary.get(category)
 
 func does_category_exist(category : String, verbose : bool) -> bool:
-	if contents_dictionary.has(category):
+	if value_dictionary.has(category):
 		if debug: print("Found Category: ", category)
 		return true
 	else:
@@ -70,6 +74,9 @@ func does_category_exist(category : String, verbose : bool) -> bool:
 
 func delete_category(category : String) -> void:
 	if !does_category_exist(category, true): return
-	contents_dictionary.erase(category)
+	container_dictionary.get(category).queue_free()
+	
+	value_dictionary.erase(category)
+	container_dictionary.erase(category)
 	
 	category_deleted.emit(category)

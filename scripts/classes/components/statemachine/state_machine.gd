@@ -34,7 +34,7 @@ func _on_child_transition(new_state_name : String) -> void:
 		new_state._enter(current_state)
 		
 		if debug: print("Transitioning from ", current_state, " to ", new_state)
-		if dyn_debug: dyn_debug.update_value(self.name, current_state.name)
+		if dyn_debug: dyn_debug.update_value(self.name, new_state.name)
 		
 		current_state = new_state
 
