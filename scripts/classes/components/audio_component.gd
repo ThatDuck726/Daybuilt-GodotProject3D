@@ -4,6 +4,14 @@ extends Component
 
 signal audio_started
 
+func destroy_audio_player(audio_player : Node) -> void:
+	audio_player.stop()
+	audio_player.queue_free()
+
+#----------------#
+# Public Methods #
+#----------------#
+
 func play_audio(stream : AudioStream) -> void:
 	var player := AudioStreamPlayer.new()
 	player.stream = stream
@@ -17,7 +25,3 @@ func play_audio3d(stream : AudioStream) -> void:
 	player.connect("finished", destroy_audio_player.bind(player))
 	add_child(player)
 	player.play()
-
-func destroy_audio_player(audio_player : Node) -> void:
-	audio_player.stop()
-	audio_player.queue_free()

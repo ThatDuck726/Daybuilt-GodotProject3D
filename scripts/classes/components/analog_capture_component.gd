@@ -36,5 +36,9 @@ func consume_input() -> Vector2:
 	_joy_input = Vector2.ZERO
 	return input
 
+#----------------#
+# Public Methods #
+#----------------#
+
 func play_controller_vibration() -> void:
 	pass

@@ -44,6 +44,10 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	current_state._physics_update(delta)
 
+#----------------#
+# Public Methods #
+#----------------#
+
 func get_state_from_name(state_name : String) -> State:
 	if !states.has(state_name):
 		push_error("State does not exist: ", state_name, " in StateMachine: ", self.name)

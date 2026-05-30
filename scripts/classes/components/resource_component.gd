@@ -33,9 +33,9 @@ func _process(delta: float) -> void:
 	var _previous_resource_quantity := _current_resource_quantity
 	_current_resource_quantity = minf(_current_resource_quantity + passive_regen_rate * delta, maximum_resource_quantity)
 
-#---------------v
-# Public Methods
-#---------------v
+#----------------#
+# Public Methods #
+#----------------#
 
 func change_resource_quantity(_quantity : float) -> void:
 	if _quantity == 0: return
