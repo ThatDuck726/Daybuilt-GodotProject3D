@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ddpnxyi5bftrw" path="res://scenes/player_controller/player_character.gd" id="1_uxcjg"]
 [ext_resource type="Script" uid="uid://kabpamtfyajc" path="res://scripts/classes/components/health_component.gd" id="2_cx3q3"]
-[ext_resource type="Script" uid="uid://cb2ggco55x7n4" path="res://scripts/classes/components/mouse_capture_component.gd" id="2_qcfe0"]
+[ext_resource type="Script" uid="uid://cb2ggco55x7n4" path="res://scripts/classes/components/analog_capture_component.gd" id="2_qcfe0"]
 [ext_resource type="Script" uid="uid://dph5mxplib58e" path="res://scenes/player_controller/camera_controller.gd" id="3_dftnd"]
 [ext_resource type="Script" uid="uid://cgg8v6mqlww17" path="res://scripts/classes/components/audio_component.gd" id="3_qcfe0"]
 [ext_resource type="Script" uid="uid://d37bkrw4sle3v" path="res://scripts/classes/components/statemachine/state_machine.gd" id="4_e0u4p"]
