@@ -21,14 +21,17 @@ func create_save(category : String, value : String) -> void:
 	if does_save_exist(category):
 		update_save(category, value)
 	
+	if debug: print("Creating Category: ", category, " | Setting Value: ", value)
 	values_dictionary.set(category, value)
 
 func update_save(category : String, value : String) -> void:
 	if !does_save_exist(category): return
+	if debug: print("Updating Category: ", category, " | New Value: ", value)
 	values_dictionary.set(category, value)
 
 func get_save(category : String) -> String:
 	if !does_save_exist(category): return "N/A"
+	if debug: print("Fetching Value from Category: ", category, " | Returned: ", values_dictionary.get(category))
 	return values_dictionary.get(category)
 
 func does_save_exist(category : String) -> bool:
