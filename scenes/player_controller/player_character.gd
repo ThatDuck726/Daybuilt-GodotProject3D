@@ -31,7 +31,7 @@ func update_input(speed : float, acceleration : float, deceleration : float) -> 
 	# Get Direction based on Input
 	_input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	
-	var direction
+	var direction : Vector3
 	var current_velocity : Vector2
 	
 	current_velocity = Vector2(_movement_velocity.x, _movement_velocity.z)
