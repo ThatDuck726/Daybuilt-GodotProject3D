@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://cmku21m2xg7h5" path="res://scripts/classes/components/resource_component.gd" id="7_e0u4p"]
 [ext_resource type="Script" uid="uid://ctl3bat25rwmy" path="res://scenes/player_controller/states/walk_movement_state.gd" id="7_yuslv"]
 [ext_resource type="Script" uid="uid://cmud7br6t8wyh" path="res://scenes/player_controller/states/jump_movement_state.gd" id="8_l1ug8"]
-[ext_resource type="Script" uid="uid://00khsk4ctda5" path="res://scenes/player_controller/states/sprint_movement_state.gd" id="9_l1ug8"]
 [ext_resource type="Script" uid="uid://b3vcyv3niknj1" path="res://scripts/classes/components/statemachine/state.gd" id="11_up0t1"]
 [ext_resource type="Script" uid="uid://jb2bev1wf8xk" path="res://scenes/user_interface/dynamic_debug/dyn_debug.gd" id="12_d8xub"]
 [ext_resource type="Theme" uid="uid://cw8h33xv1acv0" path="res://scenes/user_interface/dynamic_debug/dyn_debug.theme" id="12_vfo37"]
@@ -66,9 +65,6 @@ script = ExtResource("7_yuslv")
 [node name="JumpMovementState" type="Node" parent="MovementStateMachine" unique_id=1799454410]
 script = ExtResource("8_l1ug8")
 
-[node name="SprintMovementState" type="Node" parent="MovementStateMachine" unique_id=647292744]
-script = ExtResource("9_l1ug8")
-
 [node name="WeaponStateMachine" type="Node" parent="." unique_id=1914343710 node_paths=PackedStringArray("current_state")]
 script = ExtResource("4_e0u4p")
 current_state = NodePath("IdleWeaponState")
@@ -106,3 +102,7 @@ layout_mode = 2
 [node name="DynDebug" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer" unique_id=2123346977]
 layout_mode = 2
 script = ExtResource("12_d8xub")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1915904385]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AudioStreamPlayer" unique_id=1091463113]

@@ -32,4 +32,5 @@ func get_save(category : String) -> String:
 	return values_dictionary.get(category)
 
 func does_save_exist(category : String) -> bool:
+	if debug: print("Checking for Category: ", category, " | Returned: ", values_dictionary.has(category))
 	return values_dictionary.has(category)
