@@ -22,8 +22,9 @@
 radial_segments = 6
 rings = 4
 
-[node name="PlayerCharacter" type="CharacterBody3D" unique_id=1179956342 node_paths=PackedStringArray("health_component") groups=["player"]]
+[node name="PlayerCharacter" type="CharacterBody3D" unique_id=1179956342 node_paths=PackedStringArray("dyn_debug", "health_component") groups=["player"]]
 script = ExtResource("1_uxcjg")
+dyn_debug = NodePath("CanvasLayer/PanelContainer/MarginContainer/DynDebug")
 health_component = NodePath("HealthComponent")
 
 [node name="AnalogCaptureComponent" type="Node" parent="." unique_id=2047711409]
