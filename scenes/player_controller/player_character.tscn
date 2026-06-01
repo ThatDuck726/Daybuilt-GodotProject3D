@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://cmku21m2xg7h5" path="res://scripts/classes/components/resource_component.gd" id="7_e0u4p"]
 [ext_resource type="Script" uid="uid://ctl3bat25rwmy" path="res://scenes/player_controller/states/walk_movement_state.gd" id="7_yuslv"]
 [ext_resource type="Script" uid="uid://cmud7br6t8wyh" path="res://scenes/player_controller/states/jump_movement_state.gd" id="8_l1ug8"]
+[ext_resource type="Script" uid="uid://dc645jcp4npln" path="res://scenes/player_controller/states/sprint_movement_state.gd" id="9_rle0t"]
+[ext_resource type="Script" uid="uid://d21a476f7gqoe" path="res://scenes/player_controller/states/fall_movement_state.gd" id="11_cbd6p"]
 [ext_resource type="Script" uid="uid://b3vcyv3niknj1" path="res://scripts/classes/components/statemachine/state.gd" id="11_up0t1"]
 [ext_resource type="Script" uid="uid://jb2bev1wf8xk" path="res://scenes/user_interface/dynamic_debug/dyn_debug.gd" id="12_d8xub"]
 [ext_resource type="Theme" uid="uid://cw8h33xv1acv0" path="res://scenes/user_interface/dynamic_debug/dyn_debug.theme" id="12_vfo37"]
@@ -61,9 +63,24 @@ script = ExtResource("6_7124t")
 
 [node name="WalkMovementState" type="Node" parent="MovementStateMachine" unique_id=896924466]
 script = ExtResource("7_yuslv")
+speed = 6.0
+acceleration = 0.2
+deceleration = 0.2
+
+[node name="SprintMovementState" type="Node" parent="MovementStateMachine" unique_id=727442010]
+script = ExtResource("9_rle0t")
+speed = 9.0
+metadata/_custom_type_script = "uid://b3vcyv3niknj1"
 
 [node name="JumpMovementState" type="Node" parent="MovementStateMachine" unique_id=1799454410]
 script = ExtResource("8_l1ug8")
+speed = 5.0
+acceleration = 0.2
+deceleration = 0.2
+
+[node name="FallMovementState" type="Node" parent="MovementStateMachine" unique_id=162314680]
+script = ExtResource("11_cbd6p")
+metadata/_custom_type_script = "uid://b3vcyv3niknj1"
 
 [node name="WeaponStateMachine" type="Node" parent="." unique_id=1914343710 node_paths=PackedStringArray("current_state")]
 script = ExtResource("4_e0u4p")
@@ -79,6 +96,10 @@ script = ExtResource("11_up0t1")
 metadata/_custom_type_script = "uid://b3vcyv3niknj1"
 
 [node name="ReloadWeaponState" type="Node" parent="WeaponStateMachine" unique_id=662817216]
+script = ExtResource("11_up0t1")
+metadata/_custom_type_script = "uid://b3vcyv3niknj1"
+
+[node name="BlockWeaponState" type="Node" parent="WeaponStateMachine" unique_id=1540430870]
 script = ExtResource("11_up0t1")
 metadata/_custom_type_script = "uid://b3vcyv3niknj1"
 

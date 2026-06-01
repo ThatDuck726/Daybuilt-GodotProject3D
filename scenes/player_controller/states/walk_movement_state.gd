@@ -23,6 +23,10 @@ func _update(delta : float) -> void:
 	if target.velocity.length() <= 0.0:
 		transition.emit("IdleMovementState")
 		return
+	
+	if Input.is_action_pressed("sprint"):
+		transition.emit("SprintMovementState")
+		return
 
 func _physics_update(delta : float) -> void:
 	pass
