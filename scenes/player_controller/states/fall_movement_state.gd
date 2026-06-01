@@ -7,7 +7,7 @@ extends State
 
 func _enter(previous_state : State) -> void:
 	super._enter(previous_state)
-	speed = (previous_state.speed / 1.5)
+	speed = (previous_state.speed / 1.33)
 
 func _exit() -> void:
 	pass

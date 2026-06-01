@@ -8,7 +8,7 @@ extends State
 
 func _enter(previous_state : State) -> void:
 	super._enter(previous_state)
-	speed = (previous_state.speed / 1.25)
+	speed = (previous_state.speed / 1.2)
 	target.velocity.y += jump_velocity
 
 func _exit() -> void:
