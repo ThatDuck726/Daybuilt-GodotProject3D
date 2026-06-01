@@ -18,8 +18,11 @@ func _update(delta : float) -> void:
 	
 	if Input.is_action_just_pressed("jump"):
 		transition.emit("JumpMovementState")
+		return
 
-func _physics_update(delta : float) -> void:
 	if target.velocity.length() > 0.0:
 		transition.emit("WalkMovementState")
 		return
+
+func _physics_update(delta : float) -> void:
+	pass

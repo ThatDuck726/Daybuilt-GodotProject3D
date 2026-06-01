@@ -2,6 +2,7 @@ class_name PlayerCharacter
 extends CharacterBody3D
 
 @export var debug : bool
+@export var dyn_debug: Container
 
 @export var health_component : HealthComponent
 @export var interaction_component : Node
@@ -11,6 +12,12 @@ var _input_dir : Vector2 = Vector2.ZERO
 var _movement_velocity : Vector3 = Vector3.ZERO
 
 var Settings : Node
+
+func _ready() -> void:
+	dyn_debug.create_category("FPS", str(Engine.get_frames_per_second()))
+
+func _process(delta: float) -> void:
+	dyn_debug.update_value("FPS", str(Engine.get_frames_per_second()))
 
 func update_rotation(rotation_input) -> void:
 	global_transform.basis = Basis.from_euler(rotation_input)
@@ -31,7 +38,7 @@ func update_input(speed : float, acceleration : float, deceleration : float) -> 
 	# Get Direction based on Input
 	_input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	
-	var direction
+	var direction : Vector3
 	var current_velocity : Vector2
 	
 	current_velocity = Vector2(_movement_velocity.x, _movement_velocity.z)
