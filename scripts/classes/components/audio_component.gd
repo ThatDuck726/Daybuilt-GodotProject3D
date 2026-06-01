@@ -23,6 +23,7 @@ func play_audio(stream : AudioStream, volume_linear : float = 100) -> void:
 	player.play()
 	
 	if debug: print("Playing AudioStream: ", stream)
+	audio_started.emit()
 
 func play_audio3d(stream : AudioStream, position : Vector3, volume_linear : float = 100, unit_size : float = 10.0, bus : StringName = "Master") -> void:
 	var player := AudioStreamPlayer3D.new()
@@ -37,3 +38,4 @@ func play_audio3d(stream : AudioStream, position : Vector3, volume_linear : floa
 	player.play()
 	
 	if debug: print("Playing AudioStream: ", stream, " | Position: ", str(position))
+	audio_started.emit()
