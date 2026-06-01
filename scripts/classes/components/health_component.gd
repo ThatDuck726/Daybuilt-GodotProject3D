@@ -1,6 +1,12 @@
 @icon("res://assets/components/HealthComponentNode.svg")
 class_name HealthComponent
 extends Component
+## A brief description of the class's role and functionality.
+##
+## The description of the script, what it can do,
+## and any further detail.
+##
+## @deprecated
 
 @export var current_health : float = 100.0
 @export var maximum_health : float = 100.0

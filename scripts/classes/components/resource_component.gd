@@ -1,5 +1,11 @@
 class_name ResourceComponent
 extends Component
+## A brief description of the class's role and functionality.
+##
+## The description of the script, what it can do,
+## and any further detail.
+##
+## @experimental
 
 @export_category("Resource Init")
 @export var resource_name : String = "Resource"

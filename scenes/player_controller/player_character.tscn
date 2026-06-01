@@ -154,7 +154,3 @@ text = "Return to Main Menu"
 [node name="Button4" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1680566771]
 layout_mode = 2
 text = "Return to Desktop"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1915904385]
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AudioStreamPlayer" unique_id=1091463113]
