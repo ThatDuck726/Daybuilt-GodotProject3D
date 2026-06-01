@@ -1,4 +1,4 @@
-@icon("res://assets/components/brick_wall.svg")
+@icon("res://assets/components/DungeonComponent3d.svg")
 class_name DungeonComponent
 extends Component3D
 
