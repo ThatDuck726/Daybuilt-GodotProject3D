@@ -1,6 +1,12 @@
 @icon("res://assets/components/DungeonComponent3d.svg")
-class_name DungeonComponent
+class_name DungeonComponent3D
 extends Component3D
+## A brief description of the class's role and functionality.
+##
+## The description of the script, what it can do,
+## and any further detail.
+##
+## @experimental
 
 @export var generate_on_start : bool = true
 @export_range(0, 128) var maximum_room_count : int = 5

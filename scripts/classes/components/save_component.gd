@@ -1,6 +1,12 @@
 @icon("res://assets/components/save_component_node.svg")
 class_name SaveComponent
 extends Component
+## A brief description of the class's role and functionality.
+##
+## The description of the script, what it can do,
+## and any further detail.
+##
+## @experimental
 
 var values_dictionary : Dictionary[String, String]
 

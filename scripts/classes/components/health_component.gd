@@ -6,7 +6,7 @@ extends Component
 ## The description of the script, what it can do,
 ## and any further detail.
 ##
-## @deprecated
+## @deprecated: Use [ResourceComponent] instead.
 
 @export var current_health : float = 100.0
 @export var maximum_health : float = 100.0
@@ -30,6 +30,7 @@ func change_current_health(amount : float, source : Node = null) -> void:
 	if current_health == 0.0:
 		died.emit()
 
+## Sets Current Health to New Health. Returns if Dead. 
 func set_current_health(new_health : float, source : Node = null) -> void:
 	if is_dead: return
 	

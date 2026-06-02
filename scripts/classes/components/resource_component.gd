@@ -22,6 +22,8 @@ signal maximum_resource_quantity_changed(old_quantity : float, new_quantity : fl
 
 signal current_resource_quantity_depleted
 
+var source_dictionary : Dictionary[String, float]
+
 var _current_resource_quantity : float
 var _regen_timer : float = 0.0
 
