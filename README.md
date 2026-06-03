@@ -8,8 +8,11 @@ Template Project for 3D Godot Projects designed to be forked for other projects.
 
 ### Components
 - Component
+- Component3D
 - AnalogCaptureComponent
 - AudioComponent
+- DungeonComponent3D
+- SaveComponent
 - StateMachine
 - State
 - ResourceComponent
