@@ -8,7 +8,7 @@ Template Project for 3D Godot Projects designed to be forked for other projects.
 
 ### Components
 |  Class Name   | Icon |  Description  | Extends From |
-| ------------- | ------------- | -------------- | -------------- |
+| ------------- | :-------------: | -------------- | -------------- |
 | Component |![](assets/components/ComponentNode.svg)|Base class for all Components that exist outside of 2D or 3D space | Node |
 | Component3D |![](assets/components/Component3DNode.svg) | Base class for all Components that exist within 3D space | Node3D |
 | AnalogCaptureComponent | ![](assets/components/MouseCaptureComponentNode.svg) |Used for getting mouse and joystick movement for the Player's CameraController | Component |
