@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://b1dl81x75ey8n"
 Global="*uid://b0ndy6bcxkioy"
 DiscordRPCLoader="*uid://2dimuwgbiemg"
 AmbientCG="*uid://cnxneyd8ilml2"
+Network="*uid://d1mlvahjd4lhu"
 
 [display]
 
