@@ -24,6 +24,7 @@ Template Project for 3D Godot Projects designed to be forked for other projects.
 ### Included Addons
 - [AmbientCG Browser](https://github.com/AzPepoze/godot-ambientcg) by AzPepoze & CSLRDoesntGameDev
 - [DiscordRPC-GD](https://codeberg.org/vaporvee/discord-rpc-godot) by Vaporvee
+- [GodotSteam](https://codeberg.org/godotsteam/godotsteam) by Roberto "Gramps" Sanchez
 - [TODO Manager](https://github.com/OrigamiDev-Pete/TODO_Manager) by OrigamiPete
 
 
