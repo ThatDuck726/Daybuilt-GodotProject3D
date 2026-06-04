@@ -18,11 +18,13 @@ Template Project for 3D Godot Projects designed to be forked for other projects.
 | SaveComponent |![](assets/components/save_component_node.svg)| Experimental component for reading and writing save data for simple use cases | Component |
 | StateMachine |![](assets/components/StateMachineNode.svg)| Manages States and the transitions between them | Component |
 | State |![](assets/components/StateNode.svg)| Base class for any StateMachine setup | Component |
+| SteamComponent |![](assets/components/SteamComponentNode.svg)| Base class for any components that need to utilize GodotSteam Addon | Component |
 | ResourceComponent |![](assets/components/ComponentNode.svg)| Experimental component for creating and managing any type of singular resource | Component |
 
 ### Included Addons
 - [AmbientCG Browser](https://github.com/AzPepoze/godot-ambientcg) by AzPepoze & CSLRDoesntGameDev
 - [DiscordRPC-GD](https://codeberg.org/vaporvee/discord-rpc-godot) by Vaporvee
+- [GodotSteam](https://codeberg.org/godotsteam/godotsteam) by Roberto "Gramps" Sanchez
 - [TODO Manager](https://github.com/OrigamiDev-Pete/TODO_Manager) by OrigamiPete
 
 
