@@ -1,9 +1,8 @@
 class_name ResourceComponent
 extends Component
-## A brief description of the class's role and functionality.
+## Experimental component for creating and managing any type of singular resource.
 ##
-## The description of the script, what it can do,
-## and any further detail.
+## Examples include health, stamina, mana, etc.
 ##
 ## @experimental
 

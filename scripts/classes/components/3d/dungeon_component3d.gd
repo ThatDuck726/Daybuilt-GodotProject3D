@@ -1,10 +1,9 @@
 @icon("res://assets/components/DungeonComponent3d.svg")
 class_name DungeonComponent3D
 extends Component3D
-## A brief description of the class's role and functionality.
-##
-## The description of the script, what it can do,
-## and any further detail.
+## Experimental component for creating procedually generated indoor environments.
+## 
+## [INDEV] Designed to be used with 3D scenes that contain endpoint nodes.
 ##
 ## @experimental
 

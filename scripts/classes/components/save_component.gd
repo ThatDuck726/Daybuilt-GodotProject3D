@@ -1,10 +1,9 @@
 @icon("res://assets/components/save_component_node.svg")
 class_name SaveComponent
 extends Component
-## A brief description of the class's role and functionality.
+## Experimental component for reading and writing save data for simple use cases
 ##
-## The description of the script, what it can do,
-## and any further detail.
+## Each SaveComponent has their own save file, this can be as big or small as needed.
 ##
 ## @experimental
 

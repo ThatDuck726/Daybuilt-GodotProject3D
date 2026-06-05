@@ -1,10 +1,7 @@
 @icon("res://assets/components/HealthComponentNode.svg")
 class_name HealthComponent
 extends Component
-## A brief description of the class's role and functionality.
-##
-## The description of the script, what it can do,
-## and any further detail.
+## Component for handling the health and death of an entity.
 ##
 ## @deprecated: Use [ResourceComponent] instead.
 

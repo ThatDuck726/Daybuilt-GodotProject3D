@@ -1,6 +1,10 @@
 @icon("res://assets/components/AudioComponentNode.svg")
 class_name AudioComponent
 extends Component
+## Plays Audio by passing through an AudioStream file
+##
+## Creates, manages, and deletes AudioStreamPlayer and AudioStreamPlayer3D
+##
 
 signal audio_started
 

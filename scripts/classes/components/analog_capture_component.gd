@@ -1,6 +1,10 @@
 @icon("res://assets/components/MouseCaptureComponentNode.svg")
 class_name AnalogCaptureComponent 
 extends Component
+## Used for getting mouse and joystick movement.
+##
+## Designed to be used with a CameraController
+##
 
 @export_category("Mouse Capture Settings")
 @export var current_mouse_mode : Input.MouseMode = Input.MOUSE_MODE_CAPTURED
