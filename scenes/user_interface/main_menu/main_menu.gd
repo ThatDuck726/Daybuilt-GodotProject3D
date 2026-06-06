@@ -2,6 +2,8 @@ extends MarginContainer
 
 @export var dev_world : PackedScene
 @export var credits_container : VBoxContainer
+@export var settings_container : VBoxContainer
+
 var current_container : VBoxContainer
 
 func _ready() -> void:
@@ -10,6 +12,8 @@ func _ready() -> void:
 			child.pressed.connect(_on_button_pressed.bind(child.name))
 	
 	%BackButton.pressed.connect(_on_button_pressed.bind(%BackButton.name))
+	if settings_container:
+		settings_container.back_button.pressed.connect(_on_button_pressed.bind(settings_container.back_button.name))
 	set_container(%MainContainer)
 
 func set_container(new_container : VBoxContainer) -> void:
@@ -25,6 +29,8 @@ func _on_button_pressed(button_name : String) -> void:
 			pass
 		"DevButton":
 			if dev_world: get_tree().change_scene_to_packed(dev_world)
+		"SettingsButton":
+			if settings_container: set_container(settings_container)
 		"CreditsButton":
 			set_container(credits_container)
 		"QuitButton":

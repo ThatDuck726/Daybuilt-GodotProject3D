@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://h5nlxjfn0k6l" path="res://scenes/user_interface/main_menu/main_menu.gd" id="1_ew8gn"]
 [ext_resource type="PackedScene" uid="uid://c5a2muvgbo41p" path="res://scenes/test_world/test_world.tscn" id="2_bv0at"]
+[ext_resource type="PackedScene" uid="uid://bphnrscffr1qw" path="res://scenes/user_interface/settings_menu/settings_container.tscn" id="3_kibp0"]
 
 [sub_resource type="Theme" id="Theme_41c2h"]
 Button/font_sizes/font_size = 64
@@ -10,7 +11,7 @@ Label/constants/outline_size = 0
 Label/font_sizes/font_size = 72
 Label/fonts/font = null
 
-[node name="MainMenu" type="MarginContainer" unique_id=1814887682 node_paths=PackedStringArray("credits_container")]
+[node name="MainMenu" type="MarginContainer" unique_id=1814887682 node_paths=PackedStringArray("credits_container", "settings_container")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -24,6 +25,7 @@ theme_override_constants/margin_bottom = 128
 script = ExtResource("1_ew8gn")
 dev_world = ExtResource("2_bv0at")
 credits_container = NodePath("PanelContainer/MarginContainer/CreditsContainer")
+settings_container = NodePath("PanelContainer/MarginContainer/SettingsContainer")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=577261878]
 layout_mode = 2
@@ -75,7 +77,12 @@ text = "Credits"
 layout_mode = 2
 text = "Quit"
 
+[node name="SettingsContainer" parent="PanelContainer/MarginContainer" unique_id=1758503230 instance=ExtResource("3_kibp0")]
+visible = false
+layout_mode = 2
+
 [node name="CreditsContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=818603665]
+visible = false
 layout_mode = 2
 
 [node name="GameTitle" type="Label" parent="PanelContainer/MarginContainer/CreditsContainer" unique_id=1705604018]
