@@ -78,7 +78,6 @@ layout_mode = 2
 text = "Quit"
 
 [node name="SettingsContainer" parent="PanelContainer/MarginContainer" unique_id=1758503230 instance=ExtResource("3_kibp0")]
-visible = false
 layout_mode = 2
 
 [node name="CreditsContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=818603665]
