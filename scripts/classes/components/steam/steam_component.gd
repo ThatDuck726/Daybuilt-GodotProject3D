@@ -14,5 +14,6 @@ func _ready() -> void:
 
 func get_steam_id() -> int:
 	if !Steam.isSteamRunning():
+		push_warning("Steam is not Running")
 		return 0
 	return steam_id
