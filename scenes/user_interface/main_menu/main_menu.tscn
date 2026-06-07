@@ -40,7 +40,6 @@ theme_override_constants/margin_bottom = 32
 
 [node name="MainContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1623763363]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
 [node name="GameTitle" type="Label" parent="PanelContainer/MarginContainer/MainContainer" unique_id=1241069725]
@@ -64,6 +63,18 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Dev World"
 
+[node name="HostButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer" unique_id=853491675]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+text = "Host Game"
+
+[node name="JoinButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer" unique_id=679954403]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+text = "Join Game"
+
 [node name="SettingsButton" type="Button" parent="PanelContainer/MarginContainer/MainContainer" unique_id=593809136]
 layout_mode = 2
 size_flags_vertical = 3
@@ -78,6 +89,7 @@ layout_mode = 2
 text = "Quit"
 
 [node name="SettingsContainer" parent="PanelContainer/MarginContainer" unique_id=1758503230 instance=ExtResource("3_kibp0")]
+visible = false
 layout_mode = 2
 
 [node name="CreditsContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=818603665]
