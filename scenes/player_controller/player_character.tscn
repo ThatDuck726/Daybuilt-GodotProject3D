@@ -16,7 +16,6 @@
 [ext_resource type="Script" uid="uid://jb2bev1wf8xk" path="res://scenes/user_interface/dynamic_debug/dyn_debug.gd" id="12_d8xub"]
 [ext_resource type="Theme" uid="uid://cw8h33xv1acv0" path="res://scenes/user_interface/dynamic_debug/dyn_debug.theme" id="12_vfo37"]
 [ext_resource type="Script" uid="uid://cvettagbosn47" path="res://scripts/classes/components/save_component.gd" id="15_rle0t"]
-[ext_resource type="Script" uid="uid://l4vajvy04qth" path="res://scripts/classes/components/steam/steam_component.gd" id="17_2e7vo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sxs1x"]
 
@@ -176,7 +175,3 @@ text = "Return to Main Menu"
 [node name="Button4" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1680566771]
 layout_mode = 2
 text = "Return to Desktop"
-
-[node name="SteamComponent" type="Node" parent="." unique_id=365927251]
-script = ExtResource("17_2e7vo")
-metadata/_custom_type_script = "uid://l4vajvy04qth"
