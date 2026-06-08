@@ -65,7 +65,7 @@ script = ExtResource("6_7124t")
 script = ExtResource("7_yuslv")
 speed = 6.0
 acceleration = 0.2
-deceleration = 0.2
+deceleration = 0.3
 
 [node name="SprintMovementState" type="Node" parent="MovementStateMachine" unique_id=727442010]
 script = ExtResource("9_rle0t")
